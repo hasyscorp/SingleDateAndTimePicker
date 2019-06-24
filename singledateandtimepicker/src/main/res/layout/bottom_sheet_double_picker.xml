@@ -5,7 +5,7 @@
     android:id="@+id/bottom_sheet_background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#99aaaaaa"
+    android:background="#88000000"
     >
 
     <LinearLayout
@@ -14,7 +14,6 @@
         android:layout_gravity="center"
         android:layout_height="wrap_content"
         android:background="@android:color/white"
-        android:elevation="4dp"
         android:orientation="vertical"
         >
 
