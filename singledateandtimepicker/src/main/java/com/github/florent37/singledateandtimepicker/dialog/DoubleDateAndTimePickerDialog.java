@@ -216,6 +216,7 @@ public class DoubleDateAndTimePickerDialog extends BaseDialog {
             @Override
             public void onClick(View view) {
                 if (isTab0Visible()) {
+                    pickerTab1.checkPickersMinMax();
                     displayTab1();
                 } else {
                     okClicked = true;
