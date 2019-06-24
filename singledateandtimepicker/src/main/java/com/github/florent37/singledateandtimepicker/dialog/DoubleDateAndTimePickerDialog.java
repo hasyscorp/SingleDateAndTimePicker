@@ -322,6 +322,16 @@ public class DoubleDateAndTimePickerDialog extends BaseDialog {
         return this;
     }
 
+    public DoubleDateAndTimePickerDialog setTab0TextColor(int tab0TextColor) {
+        this.tab0TextColor = tab0TextColor;
+        return this;
+    }
+
+    public DoubleDateAndTimePickerDialog setTab1TextColor(int tab1TextColor) {
+        this.tab1TextColor = tab1TextColor;
+        return this;
+    }
+
     public DoubleDateAndTimePickerDialog setButtonOkText(@Nullable String buttonOkText) {
         this.buttonOkText = buttonOkText;
         return this;
@@ -355,6 +365,14 @@ public class DoubleDateAndTimePickerDialog extends BaseDialog {
     public DoubleDateAndTimePickerDialog setCurved(boolean curved) {
         this.curved = curved;
         return this;
+    }
+
+    private void setTab0BackgroundColor(Integer tab0BackgroundColor) {
+        this.tab0BackgroundColor = tab0BackgroundColor;
+    }
+
+    private void setTab1BackgroundColor(Integer tab1BackgroundColor) {
+        this.tab1BackgroundColor = tab1BackgroundColor;
     }
 
     public DoubleDateAndTimePickerDialog setMinutesStep(int minutesStep) {
@@ -513,6 +531,13 @@ public class DoubleDateAndTimePickerDialog extends BaseDialog {
         @Nullable
         private String todayText;
 
+        @NonNull
+        @ColorInt
+        private int tab0TextColor = Color.WHITE;
+        @NonNull
+        @ColorInt
+        private int tab1TextColor = Color.WHITE;
+
         private boolean curved;
         private boolean secondDateAfterFirst;
         private boolean mustBeOnFuture;
@@ -525,6 +550,14 @@ public class DoubleDateAndTimePickerDialog extends BaseDialog {
         @ColorInt
         @Nullable
         private Integer backgroundColor = null;
+
+        @ColorInt
+        @Nullable
+        private Integer tab0BackgroundColor = null;
+
+        @ColorInt
+        @Nullable
+        private Integer tab1BackgroundColor = null;
 
         @ColorInt
         @Nullable
@@ -613,6 +646,26 @@ public class DoubleDateAndTimePickerDialog extends BaseDialog {
 
         public DoubleDateAndTimePickerDialog.Builder backgroundColor(@NonNull @ColorInt int backgroundColor) {
             this.backgroundColor = backgroundColor;
+            return this;
+        }
+
+        public DoubleDateAndTimePickerDialog.Builder tab0BackgroundColor(@NonNull @ColorInt int tab0BackgroundColor) {
+            this.tab0BackgroundColor = tab0BackgroundColor;
+            return this;
+        }
+
+        public DoubleDateAndTimePickerDialog.Builder tab1BackgroundColor(@NonNull @ColorInt int tab1BackgroundColor) {
+            this.tab1BackgroundColor = tab1BackgroundColor;
+            return this;
+        }
+
+        public DoubleDateAndTimePickerDialog.Builder tab0TextColor(@NonNull @ColorInt int tab0TextColor) {
+            this.tab0TextColor = tab0TextColor;
+            return this;
+        }
+
+        public DoubleDateAndTimePickerDialog.Builder tab1TextColor(@NonNull @ColorInt int tab1TextColor) {
+            this.tab1TextColor = tab1TextColor;
             return this;
         }
 
@@ -713,6 +766,8 @@ public class DoubleDateAndTimePickerDialog extends BaseDialog {
                     .setButtonOkText(buttonOkText)
                     .setTab0Text(tab0Text)
                     .setTab1Text(tab1Text)
+                    .setTab0TextColor(tab0TextColor)
+                    .setTab1TextColor(tab1TextColor)
                     .setMinutesStep(minutesStep)
                     .setMaxDateRange(maxDate)
                     .setMinDateRange(minDate)
@@ -738,6 +793,14 @@ public class DoubleDateAndTimePickerDialog extends BaseDialog {
                 dialog.setBackgroundColor(backgroundColor);
             }
 
+            if (tab0BackgroundColor != null) {
+                dialog.setTab0BackgroundColor(tab0BackgroundColor);
+            }
+
+            if (tab1BackgroundColor != null) {
+                dialog.setTab1BackgroundColor(tab1BackgroundColor);
+            }
+
             if (titleTextColor != null) {
                 dialog.setTitleTextColor(titleTextColor);
             }
@@ -761,4 +824,6 @@ public class DoubleDateAndTimePickerDialog extends BaseDialog {
                 dialog.dismiss();
         }
     }
+
+
 }
