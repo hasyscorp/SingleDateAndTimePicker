@@ -68,6 +68,10 @@ public class DoubleDateAndTimePickerDialog extends BaseDialog {
     @ColorInt
     protected Integer tab1TextColor = Color.BLACK;
 
+    @NonNull
+    @ColorInt
+    protected Integer okColor = Color.BLUE;
+
     private DoubleDateAndTimePickerDialog(Context context) {
         this(context, false);
     }
@@ -94,6 +98,8 @@ public class DoubleDateAndTimePickerDialog extends BaseDialog {
     }
 
     private void init(View view) {
+
+
         buttonTab0 = (TextView) view.findViewById(R.id.buttonTab0);
         buttonTab1 = (TextView) view.findViewById(R.id.buttonTab1);
         pickerTab0 = (SingleDateAndTimePicker) view.findViewById(R.id.picker_tab_0);
@@ -203,7 +209,7 @@ public class DoubleDateAndTimePickerDialog extends BaseDialog {
                 buttonOk.setText(buttonOkText);
             }
 
-            if (mainColor != null) {
+            if (okColor != null) {
                 buttonOk.setTextColor(mainColor);
             }
 
@@ -333,6 +339,11 @@ public class DoubleDateAndTimePickerDialog extends BaseDialog {
         return this;
     }
 
+    public DoubleDateAndTimePickerDialog setOkButtonColor(int okColor) {
+        this.okColor = okColor;
+        return this;
+    }
+
     public DoubleDateAndTimePickerDialog setButtonOkText(@Nullable String buttonOkText) {
         this.buttonOkText = buttonOkText;
         return this;
@@ -368,12 +379,14 @@ public class DoubleDateAndTimePickerDialog extends BaseDialog {
         return this;
     }
 
-    private void setTab0BackgroundColor(Integer tab0BackgroundColor) {
+    private DoubleDateAndTimePickerDialog setTab0BackgroundColor(Integer tab0BackgroundColor) {
         this.tab0BackgroundColor = tab0BackgroundColor;
+        return this;
     }
 
-    private void setTab1BackgroundColor(Integer tab1BackgroundColor) {
+    private DoubleDateAndTimePickerDialog setTab1BackgroundColor(Integer tab1BackgroundColor) {
         this.tab1BackgroundColor = tab1BackgroundColor;
+        return this;
     }
 
     public DoubleDateAndTimePickerDialog setMinutesStep(int minutesStep) {
@@ -538,6 +551,9 @@ public class DoubleDateAndTimePickerDialog extends BaseDialog {
         @NonNull
         @ColorInt
         private int tab1TextColor = Color.WHITE;
+        @NonNull
+        @ColorInt
+        private int okColor = Color.BLUE;
 
         private boolean curved;
         private boolean secondDateAfterFirst;
@@ -670,6 +686,11 @@ public class DoubleDateAndTimePickerDialog extends BaseDialog {
             return this;
         }
 
+        public DoubleDateAndTimePickerDialog.Builder okColor(@NonNull @ColorInt int okColor) {
+            this.okColor = okColor;
+            return this;
+        }
+
         public DoubleDateAndTimePickerDialog.Builder mainColor(@NonNull @ColorInt int mainColor) {
             this.mainColor = mainColor;
             return this;
@@ -769,6 +790,7 @@ public class DoubleDateAndTimePickerDialog extends BaseDialog {
                     .setTab1Text(tab1Text)
                     .setTab0TextColor(tab0TextColor)
                     .setTab1TextColor(tab1TextColor)
+                    .setOkButtonColor(okColor)
                     .setMinutesStep(minutesStep)
                     .setMaxDateRange(maxDate)
                     .setMinDateRange(minDate)
