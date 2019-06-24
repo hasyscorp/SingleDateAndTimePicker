@@ -1,9 +1,11 @@
 package com.github.florent37.singledateandtimepicker.dialog;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.StateListDrawable;
 import android.support.annotation.ColorInt;
+import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.view.View;
@@ -51,6 +53,20 @@ public class DoubleDateAndTimePickerDialog extends BaseDialog {
     private boolean secondDateAfterFirst;
     private boolean tab0Days, tab0Hours, tab0Minutes;
     private boolean tab1Days, tab1Hours, tab1Minutes;
+
+    // Customize
+    @Nullable
+    @ColorInt
+    protected Integer tab0BackgroundColor = Color.WHITE;
+    @Nullable
+    @ColorInt
+    protected Integer tab1BackgroundColor = Color.WHITE;
+    @Nullable
+    @ColorInt
+    protected Integer tab0TextColor = Color.BLACK;
+    @Nullable
+    @ColorInt
+    protected Integer tab1TextColor = Color.BLACK;
 
     private DoubleDateAndTimePickerDialog(Context context) {
         this(context, false);
@@ -151,6 +167,10 @@ public class DoubleDateAndTimePickerDialog extends BaseDialog {
         if (tab0Text != null) {
             buttonTab0.setText(tab0Text);
         }
+        if (tab0TextColor != null) {
+            buttonTab0.setTextColor(tab0TextColor);
+        }
+
         buttonTab0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -161,12 +181,16 @@ public class DoubleDateAndTimePickerDialog extends BaseDialog {
         if (tab1Text != null) {
             buttonTab1.setText(tab1Text);
         }
+        if (tab1TextColor != null) {
+            buttonTab1.setTextColor(tab1TextColor);
+        }
         buttonTab1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 displayTab1();
             }
         });
+
 
         //noinspection deprecation
         buttonTab0.setBackgroundDrawable(getTabsListDrawable());
@@ -283,8 +307,8 @@ public class DoubleDateAndTimePickerDialog extends BaseDialog {
     @NonNull
     private StateListDrawable getTabsListDrawable() {
         final StateListDrawable colorState0 = new StateListDrawable();
-        colorState0.addState(new int[] {android.R.attr.state_selected}, new ColorDrawable(mainColor));
-        colorState0.addState(new int[] {-android.R.attr.state_selected}, new ColorDrawable(backgroundColor));
+        colorState0.addState(new int[] {android.R.attr.state_selected}, new ColorDrawable(tab0BackgroundColor));
+        colorState0.addState(new int[] {-android.R.attr.state_selected}, new ColorDrawable(tab1BackgroundColor));
         return colorState0;
     }
 
