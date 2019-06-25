@@ -99,17 +99,6 @@ public class DoubleDateAndTimePickerDialog extends BaseDialog {
     }
 
     private void init(View view) {
-        view.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View v, int keyCode, KeyEvent event) {
-                if (keyCode == KeyEvent.KEYCODE_BACK) {
-                    close();
-                }
-
-                return true;
-            }
-        });
-
         buttonTab0 = (TextView) view.findViewById(R.id.buttonTab0);
         buttonTab1 = (TextView) view.findViewById(R.id.buttonTab1);
         pickerTab0 = (SingleDateAndTimePicker) view.findViewById(R.id.picker_tab_0);

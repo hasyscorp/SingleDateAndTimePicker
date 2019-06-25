@@ -8,6 +8,7 @@ import android.content.Context;
 import android.graphics.PixelFormat;
 import android.os.Handler;
 import android.os.Looper;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewTreeObserver;
@@ -42,6 +43,16 @@ public class BottomSheetHelper {
           windowManager = (WindowManager) context.getSystemService(WINDOW_SERVICE);
 
           view = LayoutInflater.from(context).inflate(layoutId, null, true);
+          view.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if (keyCode == KeyEvent.KEYCODE_BACK) {
+                  listener.onClose();
+                }
+
+                return true;
+            }
+          });
 
           WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams(
               // Shrink the window to wrap the content rather than filling the screen
