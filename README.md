@@ -189,7 +189,7 @@ v2.1.6 - Expand color elements.
 
 ## License
 
-    Copyright 2018, HasysCorp
+    Copyright 2019, HasysCorp
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -205,7 +205,7 @@ v2.1.6 - Expand color elements.
 
 ## OSS Notice || Android_Cropper
 ```
-This opensource library is Copyright(c) 2018 hasys corp. All rights reserved.
+This opensource library is Copyright(c) 2019 hasys corp. All rights reserved.
 
 The following  sets forth attribution notices for third party software that may be contained in this opensource library.
 If you have any questions or concerns, please contact us at purple@kakaocorp.com
