@@ -182,11 +182,14 @@ Fiches Plateau Moto : [https://www.fiches-plateau-moto.fr/](https://www.fiches-p
        src="https://raw.githubusercontent.com/florent37/DaVinci/master/mobile/src/main/res/drawable-hdpi/linkedin.png" />
 </a>
 
+## Adding Feature
+v2.1.5 - Expand color elements.
+       - If pick first date, don't work to check validation second date. This issue is fixed.
+v2.1.6 - Expand color elements.
 
-License
---------
+## License
 
-    Copyright 2016 florent37, Inc.
+    Copyright 2018, HasysCorp
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -199,3 +202,18 @@ License
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
+
+## OSS Notice || Android_Cropper
+```
+This opensource library is Copyright(c) 2018 hasys corp. All rights reserved.
+
+The following  sets forth attribution notices for third party software that may be contained in this opensource library.
+If you have any questions or concerns, please contact us at purple@kakaocorp.com
+
+=================================================================================
+
+Android-Crop
+https://github.com/xuehuayous/Android-Crop
+ Copyright 2016 florent37, Inc.
+Apache License 2.0
+```
