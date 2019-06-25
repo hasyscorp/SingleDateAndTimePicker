@@ -209,7 +209,7 @@ public class DoubleDateAndTimePickerDialog extends BaseDialog {
             }
 
             if (okColor != null) {
-                buttonOk.setTextColor(mainColor);
+                buttonOk.setTextColor(okColor);
             }
 
             if (titleTextSize != null) {

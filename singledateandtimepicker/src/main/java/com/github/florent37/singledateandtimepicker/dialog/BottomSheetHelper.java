@@ -43,16 +43,6 @@ public class BottomSheetHelper {
           windowManager = (WindowManager) context.getSystemService(WINDOW_SERVICE);
 
           view = LayoutInflater.from(context).inflate(layoutId, null, true);
-          view.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View v, int keyCode, KeyEvent event) {
-                if (keyCode == KeyEvent.KEYCODE_BACK) {
-                  listener.onClose();
-                }
-
-                return true;
-            }
-          });
 
           WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams(
               // Shrink the window to wrap the content rather than filling the screen
